@@ -1,3 +1,9 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (c) 2019 ESPHome
+// Copyright (c) RZ (@havanti) and contributors
+// Imported from havanti/esphome-truma 1.0.43; attribution added 2026-10-14.
+// See NOTICE and LICENSES/ESPHome-LICENSE for provenance and license notices.
+
 #ifdef USE_ESP32_FRAMEWORK_ESP_IDF
 
 #include "uart_component_esp_idf.h"

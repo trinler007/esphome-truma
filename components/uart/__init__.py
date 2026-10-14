@@ -1,3 +1,9 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2019 ESPHome
+# Copyright (c) RZ (@havanti) and contributors
+# Imported from havanti/esphome-truma 1.0.43; attribution added 2026-10-14.
+# See NOTICE and LICENSES/ESPHome-LICENSE for provenance and license notices.
+
 from typing import Optional
 
 import esphome.codegen as cg

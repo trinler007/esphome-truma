@@ -22,6 +22,14 @@ Tested against:
 ---
 
 
+## [Unreleased] — trinler007
+
+### Changed — 2026-10-14
+- Import Havanti 1.0.43 with its complete available history; preserve original upstream history on `codex/original-upstream`.
+- Add provenance, copyright and ESPHome license notices; keep GPLv3 unchanged.
+- Point examples and support links to this repository; add the supplied TruMatic configuration.
+- Historical entries below are from Havanti; their issue/PR numbers refer to https://github.com/havanti/esphome-truma.
+
 ## [1.0.43] — 2026-10-14 — Heating with a target, clock sync
 
 ### Fixed

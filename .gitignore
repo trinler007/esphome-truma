@@ -1,0 +1,9 @@
+.venv/
+.esphome/
+.validation/
+__pycache__/
+*.pyc
+validation.log
+secrets.yaml
+**/secrets.yaml
+

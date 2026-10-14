@@ -1,3 +1,8 @@
+// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (c) RZ (@havanti) and contributors
+// Imported from havanti/esphome-truma 1.0.43; attribution added 2026-10-14.
+// See NOTICE and LICENSES/ESPHome-LICENSE for provenance and license notices.
+
 #include "truma_cooler_c44.h"
 
 #ifdef USE_ESP32_FRAMEWORK_ESP_IDF

@@ -1,0 +1,44 @@
+esphome-truma — maintained by trinler007
+
+Imported and adapted on 2026-10-14 from:
+  https://github.com/havanti/esphome-truma
+  commit 2edc8d5387b46a2d36317006d3d84fe00c8010d5 (version 1.0.43)
+
+Copyright remains with the respective authors:
+  Fabian Schmidt and contributors: original Truma iNet Box component
+    https://github.com/Fabian-Schmidt/esphome-truma_inetbox
+  RZ (@havanti) and contributors: extended Truma components and documentation
+    https://github.com/havanti/esphome-truma
+  Marco (@magior): CP Plus C3 support in the imported history
+    https://github.com/magior
+  Copyright (c) 2019 ESPHome: code underlying components/uart
+    https://github.com/esphome/esphome
+  Copyright (c) 2026 trinler007: new configuration and maintenance material
+
+The imported project is distributed under GNU GPL version 3, as supplied
+in LICENSE. This repository retains that license and supplies source code.
+There is no warranty; see LICENSE for the applicable terms.
+
+The ESPHome-derived UART Python code retains its MIT license. ESPHome's
+C++ runtime code is GPLv3. The complete upstream copyright and license
+text from ESPHome 2026.9.1 is reproduced in LICENSES/ESPHome-LICENSE.
+That file preserves the MIT notice for the derived Python code; it does
+not relicense the other Truma components under MIT.
+
+Original notices and author metadata are retained. Added attribution
+headers identify the imported sources; they do not transfer ownership.
+New maintenance scripts and documentation are GPL-3.0-only.
+The FSF copyright in LICENSE refers to the license document itself.
+
+Protocol research acknowledged by upstream:
+  https://github.com/muccc/WomoLIN
+  https://github.com/danielfett/inetbox.py
+  https://github.com/mc0110/inetbox2mqtt
+These references acknowledge research and do not assert that their code
+was newly imported here. Truma trademarks belong to their respective owners.
+
+Changes in this import: repository/support URLs, source attribution headers,
+TruMatic YAML, licensing/provenance documents, local validation and CI.
+Component algorithms and the upstream version string remain unchanged.
+See UPSTREAM.md and the Git history for sources and subsequent modifications.
+

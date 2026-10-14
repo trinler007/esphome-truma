@@ -1,7 +1,6 @@
-> [!TIP]
-> ### ☕ Support
-> If the ongoing maintenance of this fork helps you (new features, fixes, docs and support all happen in my spare time), feel free to buy me a coffee:
-> **[paypal.me/rzaenger](https://paypal.me/rzaenger)** (no obligation, a star ⭐ is just as appreciated).
+> Maintained by **trinler007**. Imported on **2026-10-14** from [havanti/esphome-truma](https://github.com/havanti/esphome-truma), version **1.0.43**, commit `2edc8d5387b46a2d36317006d3d84fe00c8010d5`. Component behavior is unchanged. Upstream test reports below describe the upstream setup.
+> Provenance, copyright and licenses: [NOTICE](NOTICE), [UPSTREAM.md](UPSTREAM.md), [LICENSE](LICENSE), [ESPHome license](LICENSES/ESPHome-LICENSE).
+> Your ESP32 / Combi 6DE configuration: [trumatic.yaml](trumatic.yaml). Copy [secrets.example.yaml](secrets.example.yaml) to `secrets.yaml` and enter your own credentials.
 
 <div align="center">
 
@@ -10,7 +9,7 @@
 
 **Why freeze in campervan when ESP32 fix everything for you?**
 
-[![Release](https://img.shields.io/github/v/release/havanti/esphome-truma?style=flat-square&color=blue)](https://github.com/havanti/esphome-truma/releases) [![Stars](https://img.shields.io/github/stars/havanti/esphome-truma?style=flat-square&color=yellow)](https://github.com/havanti/esphome-truma) [![ESPHome](https://img.shields.io/badge/ESPHome-%E2%89%A52026.9.1-blue?style=flat-square)](https://esphome.io) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/trinler007/esphome-truma?style=flat-square&color=blue)](https://github.com/trinler007/esphome-truma/releases) [![Stars](https://img.shields.io/github/stars/trinler007/esphome-truma?style=flat-square&color=yellow)](https://github.com/trinler007/esphome-truma) [![ESPHome](https://img.shields.io/badge/ESPHome-%E2%89%A52026.9.1-blue?style=flat-square)](https://esphome.io) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](LICENSE)
 
 [Features](#what-this-fork-adds) • [Examples](#example-configurations) • [Hardware](hardware/) • [De-coking](#diesel-de-coking--residue-combustion) • [Aventa AC](#truma-aventa-gen-2--air-conditioning) • [Cooler](#truma-cooler-cxx--cooling-box) • [TPMS](#tpms--tire-pressure-monitoring-via-bluetooth-proxy) • [Troubleshooting](TROUBLESHOOTING.en.md) • [Contributing](CONTRIBUTING.en.md)
 
@@ -34,6 +33,8 @@ Commissioning problems? → [Troubleshooting guide (TROUBLESHOOTING.en.md)](TROU
 ---
 
 ## Acknowledgements
+
+Credit also goes to **[RZ (@havanti)](https://github.com/havanti)** for the imported extensions and documentation. Upstream support: [paypal.me/rzaenger](https://paypal.me/rzaenger).
 
 A heartfelt thank you goes to **[Fabian Schmidt](https://github.com/Fabian-Schmidt)**, whose outstanding work on the original [esphome-truma_inetbox](https://github.com/Fabian-Schmidt/esphome-truma_inetbox) repository made all of this possible in the first place. This project is a fork of his work, and without his dedication and expertise none of this would exist. Thank you, Fabian!
 
@@ -105,7 +106,7 @@ The Truma Cooler C(XX) is controlled directly via BLE — no separate gateway ne
 external_components:
   - source:
       type: git
-      url: https://github.com/havanti/esphome-truma
+      url: https://github.com/trinler007/esphome-truma
       ref: main
     components: [truma_cooler]
     refresh: always
@@ -246,7 +247,7 @@ Requires ESPHome >= 2026.9.1.
 | Combi Diesel 4E | ~4 kW (+Hybrid) | Diesel               | ✅               |
 | Combi Diesel 6E | ~6 kW (+Hybrid) | Diesel               | ✅               |
 
-> **Compatibility note:** Developed and tested with a Truma Combi 6DE (2018 model year, Eberspächer burner). Whether other models — in particular newer diesel generations with a burner developed by Truma themselves (without Eberspächer) — are also compatible has not been verified. Feedback on this is very welcome — please open an [issue](https://github.com/havanti/esphome-truma/issues).
+> **Compatibility note:** Developed and tested with a Truma Combi 6DE (2018 model year, Eberspächer burner). Whether other models — in particular newer diesel generations with a burner developed by Truma themselves (without Eberspächer) — are also compatible has not been verified. Feedback on this is very welcome — please open an [issue](https://github.com/trinler007/esphome-truma/issues).
 
 > **CP Plus:** Tested on the bench with a CP Plus 4.04.01. Since 1.0.42 the older CP Plus C3 works as well, tested by Marco on a C3.00.00 with Combi 6 Gas (issue #29). On a C3 the component does not set the clock, the C3 does not accept it.
 
@@ -361,7 +362,7 @@ esphome:
 external_components:
   - source:
       type: git
-      url: https://github.com/havanti/esphome-truma.git
+      url: https://github.com/trinler007/esphome-truma.git
     components: [truma_inetbox, uart]
     refresh: always
 
@@ -628,7 +629,7 @@ GPS or a DS1307 RTC also work as a clock source instead of Home Assistant Time. 
 If you give this component a try, your feedback is very welcome!
 
 Please test it with your setup and let us know how it goes — whether everything works smoothly
-or you run into any issues. Feel free to open an [issue](https://github.com/havanti/esphome-truma/issues) with your findings,
+or you run into any issues. Feel free to open an [issue](https://github.com/trinler007/esphome-truma/issues) with your findings,
 bug reports, or suggestions for improvement. Every report helps make this project better for everyone.
 
 ---

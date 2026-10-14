@@ -22,6 +22,14 @@ Getestet mit:
 ---
 
 
+## [Unreleased] — trinler007
+
+### Geändert — 2026-10-14
+- Havanti 1.0.43 samt vollständiger verfügbarer Historie importiert; ursprüngliche Upstream-Historie auf `codex/original-upstream` erhalten.
+- Herkunft, Copyright und ESPHome-Lizenzhinweise ergänzt; GPLv3 unverändert erhalten.
+- Beispiele und Support-Links auf dieses Repository umgestellt; übergebene TruMatic-Konfiguration ergänzt.
+- Die folgenden historischen Einträge stammen von Havanti; ihre Issue-/PR-Nummern beziehen sich auf https://github.com/havanti/esphome-truma.
+
 ## [1.0.43] — 2026-10-14 — Heizen mit Temperatur, Uhr-Sync
 
 ### Behoben
