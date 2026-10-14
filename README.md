@@ -1,4 +1,4 @@
-> Weiterpflege durch **trinler007**. Übernommen am **14.10.2026** aus [havanti/esphome-truma](https://github.com/havanti/esphome-truma), Version **1.0.43**, Commit `2edc8d5387b46a2d36317006d3d84fe00c8010d5`. Das Verhalten der Komponenten wurde nicht geändert. Die nachfolgenden Testberichte stammen aus dem Upstream-Projekt.
+> Weiterpflege durch **trinler007**. Übernommen aus [havanti/esphome-truma](https://github.com/havanti/esphome-truma), Version **1.0.43**, Commit `2edc8d5387b46a2d36317006d3d84fe00c8010d5`. Das Verhalten der Komponenten wurde nicht geändert. Die nachfolgenden Testberichte stammen aus dem Upstream-Projekt.
 > Herkunft, Copyright und Lizenzen: [NOTICE](NOTICE), [UPSTREAM.md](UPSTREAM.md), [LICENSE](LICENSE), [ESPHome-Lizenz](LICENSES/ESPHome-LICENSE).
 
 <div align="center">
