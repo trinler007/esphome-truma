@@ -62,10 +62,6 @@ void TrumaSensor::setup() {
         this->publish_state(heater_error_display_number(status_heater->error_code_low, status_heater->error_code_high));
         break;
       }
-      case TRUMA_SENSOR_TYPE::HEATER_ERROR_CODE_RAW: {
-        this->publish_state(heater_error_legacy_number(status_heater->error_code_low, status_heater->error_code_high));
-        break;
-      }
       default:
         break;
     }

@@ -26,7 +26,7 @@ Getestet mit:
 
 ### Behoben — 2026-11-05
 - Combi D6E: bestätigtes Bytepaar `A4 02` ergibt jetzt 164 statt 364. Andere Bytepaare behalten bis zur Verifikation die bisherige Rechnung.
-- Optionalen Fehler-Textsensor (`W164H`, `None` oder explizit unbekannte Rohbytes), bisherigen Zahlenwert als Diagnosesensor und Regressionstest mit Originalframe ergänzt.
+- Bestehenden Zahlensensor und YAML beibehalten; Regressionstest mit Originalframe ergänzt. Keine zusätzliche W/E- oder Geräteanzeige.
 
 ### Geändert — 2026-10-14
 - Havanti 1.0.43 samt vollständiger verfügbarer Historie importiert; ursprüngliche Upstream-Historie auf `codex/original-upstream` erhalten.

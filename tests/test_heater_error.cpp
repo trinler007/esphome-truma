@@ -14,19 +14,14 @@ int main() {
       0x02,0xFA,0x0A,0x0A,0x0B,0x05,0xA4,0x02,0x00,0x00,0x00,0x00,0x00};
   static_assert(heater_error_legacy_number(frame[34], frame[35]) == 364);
   static_assert(heater_error_display_number(frame[34], frame[35]) == 164);
-  assert(heater_error_display_text(frame[34], frame[35]) == "W164H");
-  assert(heater_error_display_text(0, 0) == "None");
   assert(heater_error_display_number(0, 0) == 0);
-  assert(heater_error_display_text(0xD4, 0) == "Unknown (raw D4 00)");
   // Guard against introducing a global -200 offset, dropping high bytes, or
-  // mislabelling all nonzero second bytes as warnings based on one observation.
+  // changing unverified byte pairs based on one observation.
   for (unsigned high = 0; high < 256; ++high) {
     for (unsigned low = 0; low < 256; ++low) {
       if (low == 0xA4 && high == 0x02)
         continue;
       assert(heater_error_display_number(low, high) == high * 100 + low);
-      if (low != 0 || high != 0)
-        assert(heater_error_display_text(low, high).find("Unknown (raw ") == 0);
     }
   }
 }

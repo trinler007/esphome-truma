@@ -170,11 +170,6 @@ number:
     name: "Electric Power Level"
     type: ELECTRIC_POWER_LEVEL
 
-text_sensor:
-  - platform: truma_inetbox
-    name: "Heater Error Display"
-    type: HEATER_ERROR_CODE
-
 sensor:
   - platform: truma_inetbox
     name: "Current Room Temperature"
@@ -195,12 +190,6 @@ sensor:
   - platform: truma_inetbox
     name: "Heater Error Code"
     type: HEATER_ERROR_CODE
-
-  - platform: truma_inetbox
-    name: "Heater Error Code Raw"
-    type: HEATER_ERROR_CODE_RAW
-    entity_category: diagnostic
-    disabled_by_default: true
 
   - platform: truma_inetbox
     name: "Heating Mode"

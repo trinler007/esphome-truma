@@ -4,8 +4,6 @@
 #pragma once
 
 #include <cstdint>
-#include <cstdio>
-#include <string>
 
 namespace esphome {
 namespace truma_inetbox {
@@ -19,16 +17,6 @@ constexpr uint16_t heater_error_legacy_number(uint8_t low, uint8_t high) { retur
 
 constexpr uint16_t heater_error_display_number(uint8_t low, uint8_t high) {
   return heater_error_is_w164h(low, high) ? 164U : heater_error_legacy_number(low, high);
-}
-
-inline std::string heater_error_display_text(uint8_t low, uint8_t high) {
-  if (low == 0 && high == 0)
-    return "None";
-  if (heater_error_is_w164h(low, high))
-    return "W164H";
-  char text[40];
-  std::snprintf(text, sizeof(text), "Unknown (raw %02X %02X)", low, high);
-  return text;
 }
 
 }  // namespace truma_inetbox
