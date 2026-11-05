@@ -645,3 +645,16 @@ Use of this project is entirely voluntary and at your own risk.
 This software is provided "as is", without warranty of any kind, express or implied. The author(s) accept no liability whatsoever for any damage to persons, property, vehicles, heating appliances, or any other assets arising from the use, misuse, or inability to use this software or the configurations provided herein. This includes, but is not limited to, damage resulting from incorrect configuration, unexpected device behaviour, software bugs, or hardware failure.
 
 Before using any automation that controls a gas or diesel heater, ensure you understand the operation of your specific device and comply with all applicable safety regulations. Always test new configurations under supervised conditions.
+
+## Heater error display (trinler007)
+
+`HEATER_ERROR_CODE` corrects the verified Combi D6E byte pair `A4 02` to **164**, previously **364**. The CP Plus displayed **W164H** in the user capture on 2026-11-05. This is a verified mapping, not a general W/E decoding rule. Other byte pairs retain the legacy numeric calculation (`high * 100 + low`) until their display mapping is established. Do not assume every numeric value matches the manual yet.
+
+An optional `text_sensor` with `type: HEATER_ERROR_CODE` shows `W164H` for this pair, `None` for `00 00`, and `Unknown (raw XX YY)` for other pairs. It reports no state before the first heater frame. Existing version text sensors without `type` remain compatible. The optional numeric `HEATER_ERROR_CODE_RAW` retains the old combined number (364 here), not a packed 16-bit integer. Raw bytes remain in the heater log. Existing numeric entities keep their identity; automations matching 364 for this warning must be updated to 164.
+
+```yaml
+text_sensor:
+  - platform: truma_inetbox
+    name: "Heater Error Display"
+    type: HEATER_ERROR_CODE
+```

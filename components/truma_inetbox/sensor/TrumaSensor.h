@@ -23,6 +23,7 @@ enum class TRUMA_SENSOR_TYPE {
   ENERGY_MIX,
   OPERATING_STATUS,
   HEATER_ERROR_CODE,
+  HEATER_ERROR_CODE_RAW,
   PID22_BYTE0,
   PID22_BYTE1,
   VENT_MODE,
@@ -59,6 +60,8 @@ inline const char *enum_to_c_str(const TRUMA_SENSOR_TYPE val) {
     case TRUMA_SENSOR_TYPE::HEATER_ERROR_CODE:
       return "HEATER_ERROR_CODE";
       break;
+    case TRUMA_SENSOR_TYPE::HEATER_ERROR_CODE_RAW:
+      return "HEATER_ERROR_CODE_RAW";
     case TRUMA_SENSOR_TYPE::PID22_BYTE0:
       return "PID22_BYTE0";
       break;

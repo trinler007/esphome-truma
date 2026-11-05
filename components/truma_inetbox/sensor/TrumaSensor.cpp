@@ -7,6 +7,7 @@
 #include "TrumaSensor.h"
 #include "esphome/core/log.h"
 #include "esphome/components/truma_inetbox/helpers.h"
+#include "esphome/components/truma_inetbox/heater_error.h"
 
 namespace esphome {
 namespace truma_inetbox {
@@ -58,8 +59,11 @@ void TrumaSensor::setup() {
         this->publish_state(static_cast<float>(status_heater->operating_status));
         break;
       case TRUMA_SENSOR_TYPE::HEATER_ERROR_CODE: {
-        float errorcode = status_heater->error_code_high * 100.0f + status_heater->error_code_low;
-        this->publish_state(errorcode);
+        this->publish_state(heater_error_display_number(status_heater->error_code_low, status_heater->error_code_high));
+        break;
+      }
+      case TRUMA_SENSOR_TYPE::HEATER_ERROR_CODE_RAW: {
+        this->publish_state(heater_error_legacy_number(status_heater->error_code_low, status_heater->error_code_high));
         break;
       }
       default:

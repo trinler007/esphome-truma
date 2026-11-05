@@ -644,3 +644,16 @@ Die Nutzung dieses Projekts erfolgt vollständig freiwillig und auf eigene Gefah
 Diese Software wird „wie besehen" ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Die Autor(en) übernehmen keinerlei Haftung für Schäden an Personen, Eigentum, Fahrzeugen, Heizgeräten oder sonstigen Vermögenswerten, die durch die Nutzung, missbräuchliche Verwendung oder Nichtnutzbarkeit dieser Software oder der hierin enthaltenen Konfigurationen entstehen. Dies schließt unter anderem Schäden ein, die auf fehlerhafte Konfiguration, unerwartetes Geräteverhalten, Software-Fehler oder Hardware-Ausfälle zurückzuführen sind.
 
 Vor der Nutzung einer Automatisierung, die ein Gas- oder Dieselheizgerät steuert, ist sicherzustellen, dass das betreffende Gerät vollständig verstanden wird und alle geltenden Sicherheitsvorschriften eingehalten werden. Neue Konfigurationen immer unter Aufsicht testen.
+
+## Fehleranzeige der Heizung (trinler007)
+
+`HEATER_ERROR_CODE` korrigiert das belegte Combi-D6E-Bytepaar `A4 02` auf **164**, bisher **364**. Das CP Plus zeigte im Nutzermitschnitt vom 05.11.2026 **W164H**. Dies ist eine bestätigte Zuordnung, keine allgemeine Regel zur W/E-Dekodierung. Andere Bytepaare behalten vorerst die bisherige numerische Rechnung (`high * 100 + low`), bis ihre Displayzuordnung belegt ist. Deshalb entsprechen noch nicht automatisch alle Zahlen den Handbüchern.
+
+Ein optionaler `text_sensor` mit `type: HEATER_ERROR_CODE` zeigt für dieses Paar `W164H`, für `00 00` den Wert `None` und für andere Paare `Unknown (raw XX YY)`. Vor dem ersten Heizungsframe wird kein Zustand gemeldet. Bestehende Versions-Textsensoren ohne `type` bleiben kompatibel. Der optionale numerische `HEATER_ERROR_CODE_RAW` erhält die alte zusammengesetzte Zahl (hier 364), keine gepackte 16-Bit-Zahl. Die Rohbytes bleiben im Heizungslog erhalten. Die bestehende numerische Entität bleibt bestehen; Automationen, die für diese Warnung auf 364 prüfen, müssen auf 164 angepasst werden.
+
+```yaml
+text_sensor:
+  - platform: truma_inetbox
+    name: "Heater Error Display"
+    type: HEATER_ERROR_CODE
+```
