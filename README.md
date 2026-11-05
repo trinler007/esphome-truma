@@ -643,3 +643,9 @@ Die Nutzung dieses Projekts erfolgt vollständig freiwillig und auf eigene Gefah
 Diese Software wird „wie besehen" ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Die Autor(en) übernehmen keinerlei Haftung für Schäden an Personen, Eigentum, Fahrzeugen, Heizgeräten oder sonstigen Vermögenswerten, die durch die Nutzung, missbräuchliche Verwendung oder Nichtnutzbarkeit dieser Software oder der hierin enthaltenen Konfigurationen entstehen. Dies schließt unter anderem Schäden ein, die auf fehlerhafte Konfiguration, unerwartetes Geräteverhalten, Software-Fehler oder Hardware-Ausfälle zurückzuführen sind.
 
 Vor der Nutzung einer Automatisierung, die ein Gas- oder Dieselheizgerät steuert, ist sicherzustellen, dass das betreffende Gerät vollständig verstanden wird und alle geltenden Sicherheitsvorschriften eingehalten werden. Neue Konfigurationen immer unter Aufsicht testen.
+
+## Fehleranzeige der Heizung (trinler007)
+
+`HEATER_ERROR_CODE` korrigiert das belegte Combi-D6E-Bytepaar `A4 02` auf **164**, bisher **364**. Das CP Plus zeigte im Nutzermitschnitt vom 05.11.2026 **W164H**. Dies ist eine bestätigte Zuordnung, keine allgemeine Regel zur W/E-Dekodierung. Andere Bytepaare behalten vorerst die bisherige numerische Rechnung (`high * 100 + low`), bis ihre Displayzuordnung belegt ist. Deshalb entsprechen noch nicht automatisch alle Zahlen den Handbüchern.
+
+Die bestehende numerische Entität und YAML bleiben bestehen. Automationen, die für diese Warnung auf 364 prüfen, müssen auf 164 angepasst werden. Es ist kein zusätzlicher Textsensor und keine W/E- oder Gerätekennung erforderlich. Die Rohbytes bleiben im Heizungslog erhalten.

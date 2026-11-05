@@ -16,4 +16,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install esphome==2026.9.1
+      - name: Test CP Plus error decoding against captured frame
+        run: |
+          mkdir -p .validation
+          g++ -std=c++17 -Wall -Wextra -Werror -I. tests/test_heater_error.cpp -o .validation/test_heater_error
+          .validation/test_heater_error
       - run: python scripts/validate.py --compile

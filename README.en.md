@@ -645,3 +645,9 @@ Use of this project is entirely voluntary and at your own risk.
 This software is provided "as is", without warranty of any kind, express or implied. The author(s) accept no liability whatsoever for any damage to persons, property, vehicles, heating appliances, or any other assets arising from the use, misuse, or inability to use this software or the configurations provided herein. This includes, but is not limited to, damage resulting from incorrect configuration, unexpected device behaviour, software bugs, or hardware failure.
 
 Before using any automation that controls a gas or diesel heater, ensure you understand the operation of your specific device and comply with all applicable safety regulations. Always test new configurations under supervised conditions.
+
+## Heater error display (trinler007)
+
+`HEATER_ERROR_CODE` corrects the verified Combi D6E byte pair `A4 02` to **164**, previously **364**. The CP Plus displayed **W164H** in the user capture on 2026-11-05. This is a verified mapping, not a general W/E decoding rule. Other byte pairs retain the legacy numeric calculation (`high * 100 + low`) until their display mapping is established. Do not assume every numeric value matches the manual yet.
+
+The existing numeric entity and YAML remain unchanged. Automations matching 364 for this warning must be updated to 164. No extra text sensor or device/severity suffix is needed. Raw error bytes remain available in the heater log.

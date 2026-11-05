@@ -24,6 +24,10 @@ Tested against:
 
 ## [Unreleased] — trinler007
 
+### Fixed — 2026-11-05
+- Combi D6E: verified `A4 02` now produces 164 instead of 364. Other byte pairs retain the legacy calculation pending verification.
+- Keep the existing numeric sensor and YAML unchanged; add a captured-frame regression test. No W/E or device suffix is exposed.
+
 ### Changed — 2026-10-14
 - Import Havanti 1.0.43 with its complete available history; preserve original upstream history on `codex/original-upstream`.
 - Add provenance, copyright and ESPHome license notices; keep GPLv3 unchanged.
